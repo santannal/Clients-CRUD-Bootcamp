@@ -1,6 +1,12 @@
 //TODO otimização do código em funções.
+
+//masks
+$('#inputCEP').mask('00000-000');
+
+//array para salvar as informações
 var clients = [];
 
+//carregar os dados do array
 loadClients();
 
 function loadClients() {
@@ -9,6 +15,7 @@ function loadClients() {
     }
 }
 
+//função para adicionar nova linha na table 
 function addNewRow(cli) {
     //encontrando a tabela pelo id
     var table = document.getElementById("table");
@@ -41,6 +48,7 @@ function addNewRow(cli) {
     newRow.insertCell().appendChild(stateNode);
 }
 
+//salvando informações no array e formatando o form
 function saveInfo() {
     var cli = {
         id: clients.length + 1,
