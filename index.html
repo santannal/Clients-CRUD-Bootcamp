@@ -10,6 +10,73 @@
 </head>
 
 <body>
+    <header class="text-center mt-4">
+        <div class="display-6 fw-semibold">
+            Cadastro de Clientes:
+        </div>
+    </header>
+    <main>
+        <div class="container shadow rounded">
+            <div class="row mt-3">
+                <div class="col-md-10 offset-md-1">
+                    <form id="idformulario">
+                        <div class="row">
+                            <div class="col-sm-6 mt-5">
+                                <label for="inputName" class="col-sm-2 col-form-label fs-5">Nome</label>
+                                <input type="text" class="form-control" id="inputName" required>
+                            </div>
+                            <div class="col-sm-6 mt-5">
+                                <label for="inputSecondName" class="col-sm-2 col-form-label fs-5">Sobrenome</label>
+                                <input type="text" class="form-control" id="inputSecondName" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 mt-2">
+                                <label for="inputCEP" class="col-sm-6 col-form-label fs-5">Digite o CEP:</label>
+                                <input type="text" class="form-control" id="inputCEP" required>
+                            </div>
+                            <div class="col-sm-4 mt-5">
+                                <div class="text-danger mt-2" id="msgerror"><!--Mensagem aqui--></div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-9">
+                                <label for="inputAddress" class="col-sm-2 col-form-label fs-5">Endereço:</label>
+                                <input type="text" class="form-control" id="inputAdress">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label fs-5">Número:</label>
+                                <input type="text" class="form-control" id="inputNumber" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="inputNeighborhood" class="col-sm-2 col-form-label fs-5">Bairro:</label>
+                                <input type="text" class="form-control" id="inputNeighborhood">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="inputCity" class="col-sm-2 col-form-label fs-5">Cidade:</label>
+                                <input type="text" class="form-control" id="inputCity" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="inputState" class="col-sm-2 col-form-label fs-5">Estado:</label>
+                                <input type="text" class="form-control" id="inputState">
+                            </div>
+                        </div>
+                        <div class="row mb-5 justify-content-center mt-3">
+                            <div class="col-sm-1">
+                                <button class="btn btn-primary">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
