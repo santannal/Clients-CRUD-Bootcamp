@@ -19,7 +19,7 @@
         <div class="container shadow rounded">
             <div class="row mt-3">
                 <div class="col-md-10 offset-md-1">
-                    <form id="formulario" method="get">
+                    <form id="formulario" onsubmit="saveInfo(); return false;" method="get">
                         <div class="row">
                             <div class="col-sm-6 mt-5">
                                 <label for="inputName" class="col-sm-2 col-form-label fs-5">Nome</label>
@@ -65,10 +65,9 @@
                                 <input type="text" class="form-control" id="inputState" disabled>
                             </div>
                         </div>
-                        </fieldset>
                         <div class="row mb-5 justify-content-center mt-3">
                             <div class="col-sm-1">
-                                <button type="submit" class="btn btn-primary" onclick="saveInfo();">Salvar</button>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
                             </div>
                         </div>
                 </div>
