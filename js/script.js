@@ -6,6 +6,11 @@ $('#inputCEP').mask('00000-000');
 //array para salvar as informações
 var clients = [];
 
+//função para ativar ou desativar o input
+function numberInput(activeOrNot) {
+    document.querySelector("#inputNumber").disabled = activeOrNot;
+}
+
 //carregar os dados do array
 loadClients();
 
@@ -65,7 +70,7 @@ function saveInfo() {
     clients.push(cli);
 
     document.getElementById("formulario").reset();
-    document.querySelector("#inputNumber").disabled = true;
+    numberInput(true);
 }
 
 $(document).ready(function () {
@@ -78,8 +83,22 @@ $(document).ready(function () {
         $("#inputState").val("");
     }
 
+    function setCep(dados) {
+        $("#inputAdress").val(dados.logradouro);
+        $("#inputNeighborhood").val(dados.bairro);
+        $("#inputCity").val(dados.localidade);
+        $("#inputState").val(dados.uf);
+    }
+
     function error_message(msg) {
         document.getElementById("msgerror").innerHTML = `<p class="text-danger mt-2">${msg}</p>`;
+    }
+
+    function loadCep() {
+        $("#inputAdress").val("...");
+        $("#inputNeighborhood").val("...");
+        $("#inputCity").val("...");
+        $("#inputState").val("...");
     }
 
     $("#inputCEP").blur(function () {
@@ -92,20 +111,14 @@ $(document).ready(function () {
 
             if (validacep.test(cep)) {
 
-                $("#inputAdress").val("...");
-                $("#inputNeighborhood").val("...");
-                $("#inputCity").val("...");
-                $("#inputState").val("...");
+                loadCep();
 
                 $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
 
                     if (!("erro" in dados)) {
                         error_message("");
-                        $("#inputAdress").val(dados.logradouro);
-                        $("#inputNeighborhood").val(dados.bairro);
-                        $("#inputCity").val(dados.localidade);
-                        $("#inputState").val(dados.uf);
-                        document.querySelector("#inputNumber").disabled = false;
+                        setCep(dados);
+                        numberInput(false);
                     }
                     else {
                         limpa_form();
