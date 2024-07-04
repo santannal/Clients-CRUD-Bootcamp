@@ -132,6 +132,7 @@ $(document).ready(function () {
                         error_message("CEP não encontrado");
                         //ajuste para desativar btn
                         turnOffButton(true);
+                        numberInput(true);
                     }
                 });
             }
@@ -140,6 +141,7 @@ $(document).ready(function () {
                 error_message("CEP Inválido");
                 //ajuste para desativar btn
                 turnOffButton(true);
+                numberInput(true);
             }
         }
         else {
