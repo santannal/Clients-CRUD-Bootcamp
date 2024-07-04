@@ -101,6 +101,11 @@ $(document).ready(function () {
         $("#inputState").val("...");
     }
 
+    //function para desativar btn - ajuste
+    function turnOffButton(statusBtn) {
+        $("#btnsubmit").prop("disabled", statusBtn);
+    }
+
     $("#inputCEP").blur(function () {
 
         var cep = $(this).val().replace(/\D/g, '');
@@ -117,18 +122,24 @@ $(document).ready(function () {
 
                     if (!("erro" in dados)) {
                         error_message("");
+                        //ajuste para ativar btn
+                        turnOffButton(false);
                         setCep(dados);
                         numberInput(false);
                     }
                     else {
                         limpa_form();
-                        error_message("CEP Inválido");
+                        error_message("CEP não encontrado");
+                        //ajuste para desativar btn
+                        turnOffButton(true);
                     }
                 });
             }
             else {
                 limpa_form();
                 error_message("CEP Inválido");
+                //ajuste para desativar btn
+                turnOffButton(true);
             }
         }
         else {
