@@ -1,4 +1,4 @@
-# 👨‍💻 CRUD de clientes para o Bootcamp Abútua
+# 👨‍💻 Client CRUD for Abútua Bootcamp
 
 This project aims to implement a CRUD (Create and Read) for clients using JavaScript with jQuery to handle backend operations. The system does not use a database but integrates with a ZIP code API to facilitate automatic address filling. 
 
